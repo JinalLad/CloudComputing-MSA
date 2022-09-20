@@ -1,0 +1,9 @@
+model\DataBean.class
+ictmsa\practice\config\Producers.class
+ictmsa\practice\service\HealthCheckService.class
+entity\Book.class
+servlet\MsaServlet.class
+client\msaclient.class
+ictmsa\practice\config\CrossOriginResourceSharingFilter.class
+ictmsa\practice\config\BootStrap.class
+ictmsa\practice\service\ExampleService.class

@@ -1,0 +1,21 @@
+#!/bin/sh
+#deploy="false"
+deploy="true"
+
+image=MSAclient2
+version=1.0-SNAPSHOT
+latest=true
+
+#OPTIONS="--no-cache --force-rm"
+#OPTIONS="--no-cache"
+#OPTIONS="--force-rm"
+OPTIONS=""
+
+docker build ${OPTIONS} -t jinallad/${image}:1.0-SNAPSHOT .
+if [ "$?" -eq 0 ] && [ ${deploy} == "true" ]; then
+    docker push jinallad/${image}:1.0-SNAPSHOT
+    if [ "$latest" == "true" ]; then
+        docker tag jinallad/${image}:1.0-SNAPSHOT jinallad/${image}:latest
+        docker push jinallad/${image}:latest
+    fi
+fi
